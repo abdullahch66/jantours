@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jan Tours</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fc;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 48px;
+      font-weight: 800;
+      color: #1d3557; /* Dark blue for a professional feel */
+      margin: 60px 0;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: auto;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      gap: 20px;
+    }
+
+    .image-box {
+      flex: 1;
+      min-width: 40%;
+      max-width: 50%;
+      overflow: hidden;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-box:hover {
+      transform: scale(1.05);
+    }
+
+    .info-box {
+      flex: 1;
+      min-width: 300px;
+      padding: 40px;
+      background-color: #f9f9f9;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .info-box h1 {
+      font-size: 32px;
+      color: #1d3557;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .contact-details {
+      font-size: 18px;
+      color: #555;
+    }
+
+    .contact-details strong {
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .contact-details i {
+      margin-right: 10px;
+      color: #1d3557;
+    }
+
+    .contact-details span,
+    .contact-details p {
+      margin-top: 5px;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      z-index: 100;
+      transition: background 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #1ebe57;
+    }
+
+    .whatsapp-icon {
+      margin-top: 15px;
+    }
+
+    #leave-review {
+      background: linear-gradient(135deg, #4c6ef5, #5a8ef7);
+      padding: 60px 0;
+    }
+
+    #leave-review .form-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 40px;
+      letter-spacing: 2px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #333;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #1d3557;
+      outline: none;
+      box-shadow: 0 0 8px rgba(29, 53, 87, 0.3);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background-color: #4c6ef5;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #3a5cb8;
+      transform: translateY(-2px);
+    }
+
+    #successMsg {
+      text-align: center;
+      color: green;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .contact-container {
+        flex-direction: column;
+      }
+
+      .image-box,
+      .info-box {
+        max-width: 100%;
+      }
+
+      .image-box img {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .page-title {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1 class="page-title">Jan Tours</h1>
+
+  <div class="contact-container">
+    <div class="image-box">
+      <img src="assets/img/car rent.jpg" alt="Car Rental" />
+    </div>
+    <div class="info-box">
+      <h1>Contact Us</h1>
+      <div class="contact-details">
+        <p>To book a car or ask a question, feel free to reach out. We're available <b>24/7</b> to serve you.</p>
+
+        <strong><i class="fas fa-phone-alt"></i> Phone:</strong>
+        <span>+92 300 0857788</span>
+
+        <strong><i class="fas fa-building"></i> Office No:</strong>
+        <span>04235713602</span>
+
+        <strong><i class="fab fa-whatsapp"></i> WhatsApp:</strong>
+        <span>+92 300 0857788</span>
+        <span>+92 300 0257788</span>
+
+        <strong><i class="fas fa-map-marker-alt"></i> Address:</strong>
+        <p>MZ-1 Landmark Plaza, Jail Road, Lahore</p>
+
+        <strong><i class="fas fa-clock"></i> Opening Hours:</strong>
+        <p>Open 24/7</p>
+      </div>
+    </div>
+  </div>
+
+  <a href="https://wa.me/923000857788" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp whatsapp-icon"></i>
+  </a>
+
+  <section id="leave-review">
+    <div class="form-container">
+      <h2>✍️ Leave a Review</h2>
+      <form id="reviewForm" class="space-y-8">
+        <div>
+          <label for="name">Your Name</label>
+          <input type="text" id="name" placeholder="Enter your name" required />
+        </div>
+
+        <div>
+          <label for="location">Location Visited</label>
+          <input type="text" id="location" placeholder="E.g., Hunza, Skardu" required />
+        </div>
+
+        <div>
+          <label for="review">Your Review</label>
+          <textarea id="review" rows="6" placeholder="Write your experience..." required></textarea>
+        </div>
+
+        <div>
+          <label for="rating">Rating</label>
+          <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="5">⭐⭐⭐⭐⭐ (Excellent)</option>
+            <option value="4">⭐⭐⭐⭐ (Good)</option>
+            <option value="3">⭐⭐⭐ (Average)</option>
+            <option value="2">⭐⭐ (Poor)</option>
+            <option value="1">⭐ (Very Bad)</option>
+          </select>
+        </div>
+
+        <button type="submit">Submit Review</button>
+
+        <p id="successMsg">✅ Thank you for your feedback!</p>
+      </form>
+    </div>
+  </section>
+
+</body>
+
+</html>
+

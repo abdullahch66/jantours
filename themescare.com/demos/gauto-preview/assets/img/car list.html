@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Listings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .car-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .car-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .car-card p {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="car-grid">
+    <div class="car-card">
+      <img src="assets/img/" alt=" />
+      <p>Hyundai Tucson</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/brv.jpg" alt="Honda BRV">
+      <p>Honda BRV</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/mghs.jpg" alt="The MG HS">
+      <p>The MG HS</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/civic.jpg" alt="Honda Civic">
+      <p>Honda Civic</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/copen.jpg" alt="Daihatsu Mini Copen">
+      <p>Daihatsu Mini Copen</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/apv.jpg" alt="Suzuki APV">
+      <p>Suzuki APV</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/passo.jpg" alt="Toyota Passo">
+      <p>Toyota Passo</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/wagonr.jpg" alt="Suzuki WagonR">
+      <p>Suzuki WagonR</p>
+    </div>
+    <div class="car-card">
+      <img src="https://example.com/yaris.jpg" alt="Toyota Yaris">
+      <p>Toyota Yaris</p>
+    </div>
+  </div>
+</body>
+</html>
